@@ -19,7 +19,8 @@ class FirstPage:
         app_height = 690
         x = (screen_width/2)-(app_width/2)
         y = (screen_height/160)-(app_height/160)
-        dashboard_window.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
+        dashboard_window.geometry(
+            f"{app_width}x{app_height}+{int(x)}+{int(y)}")
 
         # window Icon
         icon = PhotoImage(file='images\\CoffeeShop-brand-logo.png')
@@ -33,10 +34,8 @@ class FirstPage:
         for frame in (homepage, dashboard_page):
             frame.grid(row=0, column=0, sticky='nsew')
 
-
         def show_frame(frame):
             frame.tkraise()
-
 
         show_frame(homepage)
 
@@ -52,8 +51,8 @@ class FirstPage:
         logo.image = photo
         logo.place(x=0, y=0)
 
-
-        menuBar_line = Canvas(homepage, width=1500, height=1.5, bg="#e6e6e6", highlightthickness=0)
+        menuBar_line = Canvas(homepage, width=1500,
+                              height=1.5, bg="#e6e6e6", highlightthickness=0)
         menuBar_line.place(x=0, y=60)
 
         home_bgImg = Image.open('images\\home_bg.jpg')
@@ -74,13 +73,16 @@ class FirstPage:
         adm.image = photo
         adm.place(x=1280, y=5)
 
-        admLabel = Label(homepage, text='EMPLOYEE', font=('yu gothic ui', 18, 'bold'), fg='#ffc329', bg='#ffffff')
+        admLabel = Label(homepage, text='EMPLOYEE', font=(
+            'yu gothic ui', 18, 'bold'), fg='#ffc329', bg='#ffffff')
         admLabel.place(x=1150, y=11)
 
-        heading = Label(homepage, text='© GIDE0NS C0FFEE SH0P', bg='black', fg='#ff6c38', font=("yu gothic ui", 19, "bold"))
+        heading = Label(homepage, text='© GIDE0NS C0FFEE SH0P',
+                        bg='black', fg='#ff6c38', font=("yu gothic ui", 19, "bold"))
         heading.place(x=770, y=90)
 
-        heading2 = Label(homepage, text='Trending', bg='black', fg='#ff6c38', font=("", 19, "bold"))
+        heading2 = Label(homepage, text='Trending', bg='black',
+                         fg='#ff6c38', font=("", 19, "bold"))
         heading2.place(x=150, y=95)
 
         # Coffee Image
@@ -120,22 +122,28 @@ class FirstPage:
         coffeeImg6.image = photo
         coffeeImg6.place(x=270, y=275)
 
-        heading3 = Label(homepage, text='Cappuccino', bg='black', fg='#ffffff', font=("", 8, "bold"))
+        heading3 = Label(homepage, text='Cappuccino', bg='black',
+                         fg='#ffffff', font=("", 8, "bold"))
         heading3.place(x=55, y=245)
 
-        heading4 = Label(homepage, text='Mocha', bg='black', fg='#ffffff', font=("", 8, "bold"))
+        heading4 = Label(homepage, text='Mocha', bg='black',
+                         fg='#ffffff', font=("", 8, "bold"))
         heading4.place(x=182, y=245)
 
-        heading5 = Label(homepage, text='Piccolo Latte', bg='black', fg='#ffffff', font=("", 8, "bold"))
+        heading5 = Label(homepage, text='Piccolo Latte',
+                         bg='black', fg='#ffffff', font=("", 8, "bold"))
         heading5.place(x=282, y=245)
 
-        heading6 = Label(homepage, text="Cafe' Latte", bg='black', fg='#ffffff', font=("", 8, "bold"))
+        heading6 = Label(homepage, text="Cafe' Latte",
+                         bg='black', fg='#ffffff', font=("", 8, "bold"))
         heading6.place(x=56, y=370)
 
-        heading7 = Label(homepage, text='Espresso', bg='black', fg='#ffffff', font=("", 8, "bold"))
+        heading7 = Label(homepage, text='Espresso', bg='black',
+                         fg='#ffffff', font=("", 8, "bold"))
         heading7.place(x=170, y=370)
 
-        heading8 = Label(homepage, text='Black Coffee with milk', bg='black', fg='#ffffff', font=("", 7, "bold"))
+        heading8 = Label(homepage, text='Black Coffee with milk',
+                         bg='black', fg='#ffffff', font=("", 7, "bold"))
         heading8.place(x=265, y=370)
 
         # ========== HOME BUTTON =======
@@ -151,7 +159,7 @@ class FirstPage:
         # ========== MANAGE BUTTON =======
         manage_button = Button(homepage, text='Manage', bg='#ffffff', font=("", 13, "bold"), bd=0, fg='#7a7a7a',
                                cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
-                               command= manage)
+                               command=manage)
         manage_button.place(x=150, y=15)
 
         # ========== PRODUCTS BUTTON =======
@@ -170,7 +178,8 @@ class FirstPage:
             screen_height = win.winfo_screenheight()
             position_top = int(screen_height / 4 - window_height / 4)
             position_right = int(screen_width / 2 - window_width / 2)
-            win.geometry(f'{window_width}x{window_height}+{position_right}+{position_top}')
+            win.geometry(
+                f'{window_width}x{window_height}+{position_right}+{position_top}')
             win.title('Forgot Password')
             # win.configure(background=('images/hel'))
             win.resizable(0, 0)
