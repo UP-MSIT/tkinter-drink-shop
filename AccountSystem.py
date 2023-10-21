@@ -27,7 +27,7 @@ class AccountPage:
         icon = PhotoImage(file='images\\CoffeeShop-brand-logo.png')
         AccountSystem_window.iconphoto(True, icon)
 
-        AccountSystem_window.title('COFFEE SHOP')
+        AccountSystem_window.title('CHILL DRINK SHOP')
 
         # Navigating through windows
         sign_up = Frame(AccountSystem_window)
@@ -54,7 +54,7 @@ class AccountPage:
         logo.image = photo
         logo.place(x=20, y=45)
 
-        brand_name = Label(landing_page, text='GIDEONS COFFEE SHOP', bg='#ffffff', fg='#ff6c38', font=("yu gothic ui", 15, "bold"))
+        brand_name = Label(landing_page, text='CHILL DRINK SHOP', bg='#ffffff', fg='#ff6c38', font=("yu gothic ui", 15, "bold"))
         brand_name.place(x=83, y=53)
 
         text = Label(landing_page, text="FDA APPROVED", bg='#ffffff', font=("", 12, "bold"))
@@ -124,7 +124,7 @@ class AccountPage:
         logo.image = photo
         logo.place(x=20, y=45)
 
-        brand_name = Label(sign_in, text='GIDEONS COFFEE SHOP', bg='#ffffff', fg='#ff6c38', font=("", 15, "bold"))
+        brand_name = Label(sign_in, text='CHILL DRINK SHOP', bg='#ffffff', fg='#ff6c38', font=("", 15, "bold"))
         brand_name.place(x=90, y=60)
 
         text = Label(sign_in, text="FDA APPROVED", bg='#ffffff', font=("", 12, "bold"))
@@ -317,7 +317,7 @@ class AccountPage:
         logo.image = photo
         logo.place(x=20, y=45)
 
-        brand_name = Label(sign_up, text='GIDEONS COFFEE SHOP', bg='#ffffff', fg='#ff6c38', font=("", 15, "bold"))
+        brand_name = Label(sign_up, text='CHILL DRINK SHOP', bg='#ffffff', fg='#ff6c38', font=("", 15, "bold"))
         brand_name.place(x=90, y=60)
 
         text = Label(sign_up, text="FDA APPROVED", bg='#ffffff', font=("", 12, "bold"))

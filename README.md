@@ -15,7 +15,8 @@ ____
 - ALTER Table Coffee_Category to Product
 - ALTER table Coffee_Categories by adding column category_name 
 - Replace Coffee image to any Food & Drink images
-- Change text title and description
-- 
+- Replace text title and description
+- Replace Logo
+
 
 ____

@@ -77,7 +77,7 @@ class FirstPage:
             'yu gothic ui', 18, 'bold'), fg='#ffc329', bg='#ffffff')
         admLabel.place(x=1150, y=11)
 
-        heading = Label(homepage, text='© GIDE0NS C0FFEE SH0P',
+        heading = Label(homepage, text='CHILL DRINK SH0P',
                         bg='black', fg='#ff6c38', font=("yu gothic ui", 19, "bold"))
         heading.place(x=770, y=90)
 
@@ -147,8 +147,8 @@ class FirstPage:
         heading8.place(x=265, y=370)
 
         # ========== HOME BUTTON =======
-        home_button = Button(homepage, text='Home', bg='#fd6a36', font=("", 13, "bold"), bd=0, fg='white',
-                             cursor='hand2', activebackground='#fd6a36', activeforeground='white')
+        home_button = Button(homepage, text='Home', bg='#036553', font=("", 13, "bold"), bd=0, fg='white',
+                             cursor='hand2', activebackground='#036553', activeforeground='white')
         home_button.place(x=70, y=15)
 
         def manage():
@@ -158,52 +158,53 @@ class FirstPage:
 
         # ========== MANAGE BUTTON =======
         manage_button = Button(homepage, text='Manage', bg='#ffffff', font=("", 13, "bold"), bd=0, fg='#7a7a7a',
-                               cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+                               cursor='hand2', activebackground='#036553', activeforeground='white',
                                command=manage)
         manage_button.place(x=150, y=15)
 
         # ========== PRODUCTS BUTTON =======
         product_button = Button(homepage, text='Products', bg='#ffffff', font=("", 13, "bold"), bd=0, fg='#7a7a7a',
-                                cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+                                cursor='hand2', activebackground='#036553', activeforeground='white',
                                 command=manage)
         product_button.place(x=250, y=15)
 
         # ========== HELP BUTTON =======
 
-        def help():
-            win = Toplevel()
-            window_width = 1366
-            window_height = 768
-            screen_width = win.winfo_screenwidth()
-            screen_height = win.winfo_screenheight()
-            position_top = int(screen_height / 4 - window_height / 4)
-            position_right = int(screen_width / 2 - window_width / 2)
-            win.geometry(
-                f'{window_width}x{window_height}+{position_right}+{position_top}')
-            win.title('Forgot Password')
-            # win.configure(background=('images/hel'))
-            win.resizable(0, 0)
+        # def help():
+        #     win = Toplevel()
+        #     window_width = 1366
+        #     window_height = 768
+        #     screen_width = win.winfo_screenwidth()
+        #     screen_height = win.winfo_screenheight()
+        #     position_top = int(screen_height / 4 - window_height / 4)
+        #     position_right = int(screen_width / 2 - window_width / 2)
+        #     win.geometry(
+        #         f'{window_width}x{window_height}+{position_right}+{position_top}')
+        #     win.title('Forgot Password')
+        #     # win.configure(background=('images/hel'))
+        #     win.resizable(0, 0)
 
-            # Coffee Image
-            bgImage = Image.open('images\\help.png')
-            photo = ImageTk.PhotoImage(bgImage)
-            Img = Label(win, image=photo)
-            Img.image = photo
-            Img.place(x=0, y=0)
+        #     # Coffee Image
+        #     bgImage = Image.open('images\\help.png')
+        #     photo = ImageTk.PhotoImage(bgImage)
+        #     Img = Label(win, image=photo)
+        #     Img.image = photo
+        #     Img.place(x=0, y=0)
 
-        help_button = Button(homepage, text='Help', bg='#ffffff', font=("", 13, "bold"), bd=0, fg='#7a7a7a',
-                             cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a', command=help)
-        help_button.place(x=360, y=15)
+        # help_button = Button(homepage, text='Help', bg='#ffffff', font=("", 13, "bold"), bd=0, fg='#7a7a7a',
+        #                      cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a', command=help)
+        # help_button.place(x=360, y=15)
 
         def logout():
             win = Toplevel()
             AccountSystem.AccountPage(win)
             dashboard_window.withdraw()
             win.deiconify()
+            
         # ========== LOG OUT =======
         logout_button = Button(homepage, text='Logout', bg='#ffffff', font=("", 13, "bold"), bd=0, fg='#7a7a7a',
-                               cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a', command=logout)
-        logout_button.place(x=420, y=15)
+                               cursor='hand2', activebackground='#036553', activeforeground='white', command=logout)
+        logout_button.place(x=360, y=15)
 
 
 def page():
