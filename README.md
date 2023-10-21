@@ -17,6 +17,10 @@ ____
 - Replace Coffee image to any Food & Drink images
 - Replace text title and description
 - Replace Logo
+- Logo image require 225x225 .png
+- Bill icon, Product Icon, Purchase Icon, Search Icon .png
+- Menu image, 86x86, Totals 6
+- Branding Background image 1366x768
 
 
 ____
