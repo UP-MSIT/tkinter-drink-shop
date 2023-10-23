@@ -33,7 +33,7 @@ class SecondPage:
         y = (screen_height/160)-(app_height/160)
         manage_page.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
 
-        manage_page.title("Coffee Management System")
+        manage_page.title("Drink Management System")
 
         user = StringVar()
         passwd = StringVar()
@@ -116,7 +116,7 @@ class SecondPage:
                 y = (screen_height / 160) - (app_height / 160)
                 Manage_window.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
 
-                Manage_window.title("Coffee Management System")
+                Manage_window.title("Drink Management System")
 
                 # window Icon
                 icon = PhotoImage(file='images\\CoffeeShop-brand-logo.png')
@@ -183,43 +183,43 @@ class SecondPage:
                     win.deiconify()
 
                 # ========== MANAGE BUTTON =======
-                manage_button = Button(product_page, text='Manage', bg='#fd6a36', font=("", 13, "bold"), bd=0,
+                manage_button = Button(product_page, text='Manage', bg='#036553', font=("", 13, "bold"), bd=0,
                                        fg='#ffffff',
-                                       cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a')
+                                       cursor='hand2', activebackground='#036553', activeforeground='#7a7a7a')
                 manage_button.place(x=150, y=15)
 
                 # ========== PRODUCTS BUTTON =======
-                product_button = Button(product_page, text='Products', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
-                                        fg='#7a7a7a',
-                                        cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
-                                        command=lambda: product())
-                product_button.place(x=250, y=15)
+                # product_button = Button(product_page, text='Products', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
+                #                         fg='#7a7a7a',
+                #                         cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+                #                         command=lambda: product())
+                # product_button.place(x=250, y=15)
 
                 # ========== HELP BUTTON =======
-                def help():
-                    win = Toplevel()
-                    window_width = 1366
-                    window_height = 768
-                    screen_width = win.winfo_screenwidth()
-                    screen_height = win.winfo_screenheight()
-                    position_top = int(screen_height / 4 - window_height / 4)
-                    position_right = int(screen_width / 2 - window_width / 2)
-                    win.geometry(f'{window_width}x{window_height}+{position_right}+{position_top}')
-                    win.title('Forgot Password')
-                    #win.configure(background=('images/hel'))
-                    win.resizable(0, 0)
+                # def help():
+                #     win = Toplevel()
+                #     window_width = 1366
+                #     window_height = 768
+                #     screen_width = win.winfo_screenwidth()
+                #     screen_height = win.winfo_screenheight()
+                #     position_top = int(screen_height / 4 - window_height / 4)
+                #     position_right = int(screen_width / 2 - window_width / 2)
+                #     win.geometry(f'{window_width}x{window_height}+{position_right}+{position_top}')
+                #     win.title('Forgot Password')
+                #     #win.configure(background=('images/hel'))
+                #     win.resizable(0, 0)
 
-                    # Coffee Image
-                    bgImage = Image.open('images\\help.png')
-                    photo = ImageTk.PhotoImage(bgImage)
-                    Img = Label(win, image=photo)
-                    Img.image = photo
-                    Img.place(x=0, y=0)
+                #     # Coffee Image
+                #     bgImage = Image.open('images\\help.png')
+                #     photo = ImageTk.PhotoImage(bgImage)
+                #     Img = Label(win, image=photo)
+                #     Img.image = photo
+                #     Img.place(x=0, y=0)
 
-                help_button = Button(product_page, text='Help', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
-                                     fg='#7a7a7a', command=help,
-                                     cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a')
-                help_button.place(x=360, y=15)
+                # help_button = Button(product_page, text='Help', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
+                #                      fg='#7a7a7a', command=help,
+                #                      cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a')
+                # help_button.place(x=360, y=15)
 
                 def logout():
                     win = Toplevel()
@@ -232,12 +232,12 @@ class SecondPage:
                                        fg='#7a7a7a',
                                        cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
                                        command=logout)
-                logout_button.place(x=420, y=15)
+                logout_button.place(x=250, y=15)
 
-                def product():
-                    Manage_window.withdraw()
-                    os.system("python admin.py")
-                    Manage_window.destroy()
+                # def product():
+                #     Manage_window.withdraw()
+                #     os.system("python admin.py")
+                #     Manage_window.destroy()
 
                 def exit():
                     exit_command = messagebox.askyesno("Edit Teacher Records", "Are you sure you want to exit")
@@ -248,18 +248,18 @@ class SecondPage:
                 self.button6.place(relx=0.762, rely=0.022, width=86, height=25)
                 self.button6.configure(relief="flat")
                 self.button6.configure(overrelief="flat")
-                self.button6.configure(activebackground="#fd6a36")
+                self.button6.configure(activebackground="#036553")
                 self.button6.configure(cursor="hand2")
                 self.button6.configure(foreground="#ffffff")
-                self.button6.configure(background="#fd6a36")
+                self.button6.configure(background="#036553")
                 self.button6.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button6.configure(borderwidth="0")
                 self.button6.configure(text="""Exit""")
                 self.button6.configure(command=exit)
 
                 # Manage Coffee Label
-                manageCoffee = Label(coverFrame2, text='MANAGE COFFEE', font=("yu gothic ui", 13, "bold"), bg='#ffffff',
-                                     fg='#ff6c38')
+                manageCoffee = Label(coverFrame2, text='MANAGE DRINK', font=("yu gothic ui", 13, "bold"), bg='#ffffff',
+                                     fg='#036553')
                 manageCoffee.place(x=80, y=0)
 
                 coverFrame3 = LabelFrame(coverFrame2, bg='#ffffff', bd='2.4')
@@ -289,7 +289,7 @@ class SecondPage:
                 idName_entry.config(highlightbackground="#6b6a69", highlightcolor="#ff6c38")
 
                 # COFFEE NAME AND ENTRY
-                coffeeLabel = Label(coverFrame3, text="COFFEE", bg='#ffffff', font=("yu gothic ui", 12, "bold"))
+                coffeeLabel = Label(coverFrame3, text="DRINK", bg='#ffffff', font=("yu gothic ui", 12, "bold"))
                 coffeeLabel.place(x=90, y=40)
 
                 coffeeName_entry = Entry(coverFrame3, highlightthickness=2, relief=FLAT, bg="#ffffff", fg="#6b6a69",
@@ -419,10 +419,10 @@ class SecondPage:
                 self.button3.place(relx=0.539, rely=0.849, width=86, height=25)
                 self.button3.configure(relief="flat")
                 self.button3.configure(overrelief="flat")
-                self.button3.configure(activebackground="#fd6a36")
+                self.button3.configure(activebackground="#036553")
                 self.button3.configure(cursor="hand2")
                 self.button3.configure(foreground="#ffffff")
-                self.button3.configure(background="#fd6a36")
+                self.button3.configure(background="#036553")
                 self.button3.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button3.configure(borderwidth="0")
                 self.button3.configure(text="""Delete""")
@@ -432,10 +432,10 @@ class SecondPage:
                 self.button4.place(relx=0.059, rely=0.849, width=84, height=25)
                 self.button4.configure(relief="flat")
                 self.button4.configure(overrelief="flat")
-                self.button4.configure(activebackground="#fd6a36")
+                self.button4.configure(activebackground="#036553")
                 self.button4.configure(cursor="hand2")
                 self.button4.configure(foreground="#ffffff")
-                self.button4.configure(background="#fd6a36")
+                self.button4.configure(background="#036553")
                 self.button4.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button4.configure(borderwidth="0")
                 self.button4.configure(text="""Add""")
@@ -445,10 +445,10 @@ class SecondPage:
                 self.button5.place(relx=0.059, rely=0.929, width=86, height=25)
                 self.button5.configure(relief="flat")
                 self.button5.configure(overrelief="flat")
-                self.button5.configure(activebackground="#fd6a36")
+                self.button5.configure(activebackground="#036553")
                 self.button5.configure(cursor="hand2")
                 self.button5.configure(foreground="#ffffff")
-                self.button5.configure(background="#fd6a36")
+                self.button5.configure(background="#036553")
                 self.button5.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button5.configure(borderwidth="0")
                 self.button5.configure(text="""Update""")
@@ -466,10 +466,10 @@ class SecondPage:
                 self.button6.place(relx=0.539, rely=0.929, width=86, height=25)
                 self.button6.configure(relief="flat")
                 self.button6.configure(overrelief="flat")
-                self.button6.configure(activebackground="#fd6a36")
+                self.button6.configure(activebackground="#036553")
                 self.button6.configure(cursor="hand2")
                 self.button6.configure(foreground="#ffffff")
-                self.button6.configure(background="#fd6a36")
+                self.button6.configure(background="#036553")
                 self.button6.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button6.configure(borderwidth="0")
                 self.button6.configure(text="""Clear""")
@@ -526,24 +526,24 @@ class SecondPage:
 
                 # ACCOUNTS BUTTON
 
-                def accounts():
-                    win = Toplevel()
-                    Accounts.InventoryPage(win)
-                    Manage_window.withdraw()
-                    win.deiconify()
+                # def accounts():
+                #     win = Toplevel()
+                #     Accounts.InventoryPage(win)
+                #     Manage_window.withdraw()
+                #     win.deiconify()
 
-                accountsFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
-                accountsFrame.place(x=500, y=10, width=100, height=80)
+                # accountsFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
+                # accountsFrame.place(x=500, y=10, width=100, height=80)
 
-                accountsLabel = Label(accountsFrame, text="Accounts", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
-                accountsLabel.place(x=10, y=0)
+                # accountsLabel = Label(accountsFrame, text="Accounts", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
+                # accountsLabel.place(x=10, y=0)
 
-                accountsIcon = Image.open('images\\accounts_icon.png')
-                photo = ImageTk.PhotoImage(accountsIcon)
-                accounts = Button(accountsFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
-                                  activebackground="#ffffff", command=accounts)
-                accounts.image = photo
-                accounts.place(x=0, y=22)
+                # accountsIcon = Image.open('images\\accounts_icon.png')
+                # photo = ImageTk.PhotoImage(accountsIcon)
+                # accounts = Button(accountsFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
+                #                   activebackground="#ffffff", command=accounts)
+                # accounts.image = photo
+                # accounts.place(x=0, y=22)
 
                 style = ttk.Style()
                 style.theme_use("clam")
@@ -777,7 +777,7 @@ class SecondPage:
                 # ========== LOG OUT =======
                 logout_button = Button(biller, text='Logout', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
                                        fg='#7a7a7a',
-                                       cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+                                       cursor='hand2', activebackground='#036553', activeforeground='#7a7a7a',
                                        command=logout)
                 logout_button.place(x=420, y=15)
 

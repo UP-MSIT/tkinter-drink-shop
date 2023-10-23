@@ -40,7 +40,7 @@ class AccountPage:
         def show_frame(frame):
             frame.tkraise()
 
-        show_frame(landing_page)
+        show_frame(sign_in)
 
         # ======================================================================================
         # =================== LANDING PAGE ========================================================
@@ -48,33 +48,33 @@ class AccountPage:
         landing_page.config(background='#ffffff')
 
         # ====== LOGO ==========
-        logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
-        photo = ImageTk.PhotoImage(logoIcon)
-        logo = Label(landing_page, image=photo, bg='#ffffff')
-        logo.image = photo
-        logo.place(x=20, y=45)
+        # logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+        # photo = ImageTk.PhotoImage(logoIcon)
+        # logo = Label(landing_page, image=photo, bg='#ffffff')
+        # logo.image = photo
+        # logo.place(x=20, y=45)
 
-        brand_name = Label(landing_page, text='CHILL DRINK SHOP', bg='#ffffff', fg='#ff6c38', font=("yu gothic ui", 15, "bold"))
-        brand_name.place(x=83, y=53)
+        # brand_name = Label(landing_page, text='CHILL DRINK SHOP', bg='#ffffff', fg='#ff6c38', font=("yu gothic ui", 15, "bold"))
+        # brand_name.place(x=83, y=53)
 
-        text = Label(landing_page, text="FDA APPROVED", bg='#ffffff', font=("", 12, "bold"))
-        text.place(x=20, y=140)
-        txt = "• We produce hygienic and healthy coffee \nby all standards\t\t\t \n\n• Very Affordable and best Coffee in " \
-              "town \nfor the past two and half years\t"
-        text2 = Label(landing_page, text=txt,
-                      fg="#6b6a69", bg='#ffffff', font=("", 11, "bold"))
-        text2.place(x=15, y=180)
+        # text = Label(landing_page, text="FDA APPROVED", bg='#ffffff', font=("", 12, "bold"))
+        # text.place(x=20, y=140)
+        # txt = "• We produce hygienic and healthy coffee \nby all standards\t\t\t \n\n• Very Affordable and best Coffee in " \
+        #       "town \nfor the past two and half years\t"
+        # text2 = Label(landing_page, text=txt,
+        #               fg="#6b6a69", bg='#ffffff', font=("", 11, "bold"))
+        # text2.place(x=15, y=180)
 
         # ====== LOGO ==========
-        coffeeImage = Image.open('images\\coffee3.gif')
-        photo = ImageTk.PhotoImage(coffeeImage)
-        coffee_image = Label(landing_page, image=photo, bg='#ffffff')
-        coffee_image.image = photo
-        coffee_image.place(x=30, y=370)
+        # coffeeImage = Image.open('images\\coffee3.gif')
+        # photo = ImageTk.PhotoImage(coffeeImage)
+        # coffee_image = Label(landing_page, image=photo, bg='#ffffff')
+        # coffee_image.image = photo
+        # coffee_image.place(x=30, y=370)
 
 
-        pageDivide_line = Canvas(landing_page, width=1.5, height=900, bg="#e6e6e6", highlightthickness=0)
-        pageDivide_line.place(x=350, y=0)
+        # pageDivide_line = Canvas(landing_page, width=1.5, height=900, bg="#e6e6e6", highlightthickness=0)
+        # pageDivide_line.place(x=350, y=0)
 
         # ========= RIGHT SIDE ===============
         # Label
@@ -118,37 +118,37 @@ class AccountPage:
         sign_in.config(background='#ffffff')
 
         # ====== LOGO ==========
-        logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
-        photo = ImageTk.PhotoImage(logoIcon)
-        logo = Label(sign_in, image=photo, bg='#ffffff')
-        logo.image = photo
-        logo.place(x=20, y=45)
+        # logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+        # photo = ImageTk.PhotoImage(logoIcon)
+        # logo = Label(sign_in, image=photo, bg='#ffffff')
+        # logo.image = photo
+        # logo.place(x=20, y=45)
 
-        brand_name = Label(sign_in, text='CHILL DRINK SHOP', bg='#ffffff', fg='#ff6c38', font=("", 15, "bold"))
-        brand_name.place(x=90, y=60)
+        # brand_name = Label(sign_in, text='CHILL DRINK SHOP', bg='#ffffff', fg='#ff6c38', font=("", 15, "bold"))
+        # brand_name.place(x=90, y=60)
 
-        text = Label(sign_in, text="FDA APPROVED", bg='#ffffff', font=("", 12, "bold"))
-        text.place(x=20, y=140)
+        # text = Label(sign_in, text="FDA APPROVED", bg='#ffffff', font=("", 12, "bold"))
+        # text.place(x=20, y=140)
 
-        txt2 = "• We produce hygienic and healthy coffee \nby all standards\t\t\t \n\n• Very Affordable and best Coffee in " \
-              "town \nfor the past two and half years\t"
-        text2 = Label(sign_in, text=txt2,
-                      fg="#6b6a69", bg='#ffffff', font=("", 11, "bold"))
-        text2.place(x=20, y=180)
+        # txt2 = "• We produce hygienic and healthy coffee \nby all standards\t\t\t \n\n• Very Affordable and best Coffee in " \
+        #       "town \nfor the past two and half years\t"
+        # text2 = Label(sign_in, text=txt2,
+        #               fg="#6b6a69", bg='#ffffff', font=("", 11, "bold"))
+        # text2.place(x=20, y=180)
 
         # ====== LOGO ==========
-        coffeeImage = Image.open('images\\coffee3.gif')
-        photo = ImageTk.PhotoImage(coffeeImage)
-        coffee_image = Label(sign_in, image=photo, bg='#ffffff')
-        coffee_image.image = photo
-        coffee_image.place(x=30, y=370)
+        # coffeeImage = Image.open('images\\coffee3.gif')
+        # photo = ImageTk.PhotoImage(coffeeImage)
+        # coffee_image = Label(sign_in, image=photo, bg='#ffffff')
+        # coffee_image.image = photo
+        # coffee_image.place(x=30, y=370)
 
 
-        pageDivide_line = Canvas(sign_in, width=1.5, height=900, bg="#e6e6e6", highlightthickness=0)
-        pageDivide_line.place(x=350, y=0)
+        # pageDivide_line = Canvas(sign_in, width=1.5, height=900, bg="#e6e6e6", highlightthickness=0)
+        # pageDivide_line.place(x=350, y=0)
 
-        heading = Label(sign_in, text="Sign In", font=("", 13, "bold"), bg='#ffffff')
-        heading.place(x=490, y=50)
+        heading = Label(sign_in, text="Sign In", font=("", 16, "bold"), bg='#ffffff')
+        heading.place(x=600/2, y=100)
 
         Username = StringVar()
         Password = StringVar()
@@ -192,34 +192,34 @@ class AccountPage:
         # ============================Username====================================
         # ========================================================================
         username_label = Label(sign_in, text='Username', fg="#27221c", bg='#ffffff', font=("", 12, "bold"))
-        username_label.place(x=380, y=150)
+        username_label.place(x=380/2, y=150)
         username_entry = Entry(sign_in, highlightthickness=2, relief=FLAT, bg="#fafafa", fg="#6b6a69",
                                font=("", 12, 'bold'), textvariable=Username)
-        username_entry.place(x=380, y=182, width=290, height=34)
+        username_entry.place(x=380/2, y=182, width=290, height=34)
         username_entry.config(highlightbackground="#6b6a69", highlightcolor="black")
 
         # ========================================================================
         # ============================Password====================================
         # ========================================================================
         password_label = Label(sign_in, text='Password', fg="#27221c", bg='#ffffff', font=("", 12, "bold"))
-        password_label.place(x=380, y=250)
+        password_label.place(x=380/2, y=250)
         password_entry = Entry(sign_in, highlightthickness=2, relief=FLAT, bg="#fafafa", fg="#6b6a69", font=("", 12), show="•",
                                textvariable=Password)
-        password_entry.place(x=380, y=282, width=290, height=34)
+        password_entry.place(x=380/2, y=282, width=290, height=34)
         password_entry.config(highlightbackground="#6b6a69", highlightcolor="black")
 
-        loginButton = Button(sign_in, fg='#f8f8f8', text='Login', bg='#ff6c38', font=("", 12, "bold"),
-                             cursor='hand2', activebackground='#ff6c38', command=login_all)
-        loginButton.place(x=380, y=370, width=290, height=40)
+        loginButton = Button(sign_in, fg='#f8f8f8', text='Login', bg='#036553', font=("", 12, "bold"),
+                             cursor='hand2', activebackground='#036553', command=login_all)
+        loginButton.place(x=380/2, y=370, width=290, height=40)
 
         line = Canvas(sign_in, width=286, height=1.5, bg="#e6e6e6", highlightthickness=0)
-        line.place(x=380, y=440)
+        line.place(x=380/2, y=440)
         label = Label(sign_in, text='No Account Yet', bg='#ffffff')
-        label.place(x=480, y=430)
+        label.place(x=580/2, y=430)
 
         createButton = Button(sign_in, fg='#f8f8f8', text='Create New Account', bg='#4286f5', font=("", 12, "bold"),
                               cursor='hand2', activebackground='#4286f5', command=lambda: show_frame(sign_up))
-        createButton.place(x=380, y=470, width=290, height=40)
+        createButton.place(x=380/2, y=470, width=290, height=40)
 
         # function for show and hide password
         def password_command():
@@ -230,7 +230,7 @@ class AccountPage:
 
         # Check Button
         show_password = Checkbutton(sign_in, text="Show password", bg='#ffffff', fg='#27221c', command=password_command)
-        show_password.place(x=380, y=332)
+        show_password.place(x=380/2, y=332)
 
 
         def forgot_password():
@@ -297,13 +297,9 @@ class AccountPage:
                 #db.close()
                 #messagebox.showinfo('Congrats', 'Password changed successfully')
 
-
-
-
-
         forgotPassword = Button(sign_in, text='Forgot password', font=("", 10, "bold"), bg='#ffffff', fg='#4286f5',
                                 borderwidth=0, activebackground='#f8f8f8', command=lambda: forgot_password(), cursor="hand2")
-        forgotPassword.place(x=540, y=332)
+        forgotPassword.place(x=600/2, y=332)
 
         # =============================================================================================================
         # ================================ SIGN UP PAGE ===============================================================
@@ -311,36 +307,36 @@ class AccountPage:
         sign_up.config(background='#ffffff')
 
         # ====== LOGO ==========
-        logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
-        photo = ImageTk.PhotoImage(logoIcon)
-        logo = Label(sign_up, image=photo, bg='#ffffff')
-        logo.image = photo
-        logo.place(x=20, y=45)
+        # logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+        # photo = ImageTk.PhotoImage(logoIcon)
+        # logo = Label(sign_up, image=photo, bg='#ffffff')
+        # logo.image = photo
+        # logo.place(x=20, y=45)
 
-        brand_name = Label(sign_up, text='CHILL DRINK SHOP', bg='#ffffff', fg='#ff6c38', font=("", 15, "bold"))
-        brand_name.place(x=90, y=60)
+        # brand_name = Label(sign_up, text='CHILL DRINK SHOP', bg='#ffffff', fg='#ff6c38', font=("", 15, "bold"))
+        # brand_name.place(x=90, y=60)
 
-        text = Label(sign_up, text="FDA APPROVED", bg='#ffffff', font=("", 12, "bold"))
-        text.place(x=20, y=140)
-        txt3 = "• We produce hygienic and healthy coffee \nby all standards\t\t\t \n\n• Very Affordable and best Coffee in " \
-              "town \nfor the past two and half years\t"
-        text2 = Label(sign_up, text=txt3,
-                      fg="#6b6a69", bg='#ffffff', font=("", 11, "bold"))
-        text2.place(x=20, y=180)
+        # text = Label(sign_up, text="FDA APPROVED", bg='#ffffff', font=("", 12, "bold"))
+        # text.place(x=20, y=140)
+        # txt3 = "• We produce hygienic and healthy coffee \nby all standards\t\t\t \n\n• Very Affordable and best Coffee in " \
+        #       "town \nfor the past two and half years\t"
+        # text2 = Label(sign_up, text=txt3,
+        #               fg="#6b6a69", bg='#ffffff', font=("", 11, "bold"))
+        # text2.place(x=20, y=180)
 
         # ====== LOGO ==========
-        coffeeImage = Image.open('images\\coffee3.gif')
-        photo = ImageTk.PhotoImage(coffeeImage)
-        coffee_image = Label(sign_up, image=photo, bg='#ffffff')
-        coffee_image.image = photo
-        coffee_image.place(x=30, y=370)
+        # coffeeImage = Image.open('images\\coffee3.gif')
+        # photo = ImageTk.PhotoImage(coffeeImage)
+        # coffee_image = Label(sign_up, image=photo, bg='#ffffff')
+        # coffee_image.image = photo
+        # coffee_image.place(x=30, y=370)
 
 
-        pageDivide_line = Canvas(sign_up, width=1.5, height=900, bg="#e6e6e6", highlightthickness=0)
-        pageDivide_line.place(x=350, y=0)
+        # pageDivide_line = Canvas(sign_up, width=1.5, height=900, bg="#e6e6e6", highlightthickness=0)
+        # pageDivide_line.place(x=350, y=0)
 
-        heading = Label(sign_up, text="Create New Account", font=("", 13, "bold"), bg='#ffffff')
-        heading.place(x=440, y=30)
+        heading = Label(sign_up, text="Create New Account", font=("", 16, "bold"), bg='#ffffff')
+        heading.place(x=220, y=50)
 
         FullName = StringVar()
         Username2 = StringVar()
@@ -385,44 +381,44 @@ class AccountPage:
         # ============================Full name====================================
         # ========================================================================
         fullname_label = Label(sign_up, text='Fullname', fg="#27221c", bg='#ffffff', font=("", 12, "bold"))
-        fullname_label.place(x=380, y=80)
+        fullname_label.place(x=380/2, y=80)
         fullname_entry = Entry(sign_up, highlightthickness=2, relief=FLAT, bg="#fafafa", fg="#6b6a69",
                                font=("", 12, 'bold'), textvariable=FullName)
-        fullname_entry.place(x=380, y=112, width=290, height=34)
+        fullname_entry.place(x=380/2, y=112, width=290, height=34)
         fullname_entry.config(highlightbackground="#6b6a69", highlightcolor="black")
 
         # ========================================================================
         # ============================Username====================================
         # ========================================================================
         username_label2 = Label(sign_up, text='Username', fg="#27221c", bg='#ffffff', font=("", 12, "bold"))
-        username_label2.place(x=380, y=165)
+        username_label2.place(x=380/2, y=165)
         username_entry2 = Entry(sign_up, highlightthickness=2, relief=FLAT, bg="#fafafa", fg="#6b6a69",
                                 font=("", 12, 'bold'), textvariable=Username2)
-        username_entry2.place(x=380, y=197, width=290, height=34)
+        username_entry2.place(x=380/2, y=197, width=290, height=34)
         username_entry2.config(highlightbackground="#6b6a69", highlightcolor="black")
 
         # ========================================================================
         # ============================Password====================================
         # ========================================================================
         password_label2 = Label(sign_up, text='Password', fg="#27221c", bg='#ffffff', font=("", 12, "bold"))
-        password_label2.place(x=380, y=250)
+        password_label2.place(x=380/2, y=250)
         password_entry2 = Entry(sign_up, highlightthickness=2, relief=FLAT, bg="#fafafa", fg="#6b6a69", font=("", 12), show='•',
                                 textvariable=Password2)
-        password_entry2.place(x=380, y=282, width=290, height=34)
+        password_entry2.place(x=380/2, y=282, width=290, height=34)
         password_entry2.config(highlightbackground="#6b6a69", highlightcolor="black")
 
-        signupButton = Button(sign_up, fg='#f8f8f8', text='Create Account', bg='#ff6c38', font=("", 12, "bold"),
-                              cursor='hand2', activebackground='#ff6c38', command=signup_all)
-        signupButton.place(x=380, y=370, width=290, height=40)
+        signupButton = Button(sign_up, fg='#f8f8f8', text='Create Account', bg='#036553', font=("", 12, "bold"),
+                              cursor='hand2', activebackground='#036553', command=signup_all)
+        signupButton.place(x=380/2, y=370, width=290, height=40)
 
         line = Canvas(sign_up, width=286, height=1.5, bg="#e6e6e6", highlightthickness=0)
-        line.place(x=380, y=440)
+        line.place(x=380/2, y=440)
         label = Label(sign_up, text='Already have account', bg='#ffffff')
-        label.place(x=460, y=430)
+        label.place(x=540/2, y=430)
 
         sign_inButton = Button(sign_up, fg='#f8f8f8', text='Login', bg='#4286f5', font=("", 12, "bold"),
                                cursor='hand2', activebackground='#4286f5', command=lambda: show_frame(sign_in))
-        sign_inButton.place(x=380, y=470, width=290, height=40)
+        sign_inButton.place(x=380/2, y=470, width=290, height=40)
 
         # function for show and hide password
 
@@ -435,7 +431,7 @@ class AccountPage:
         # Check Button
         show_password2 = Checkbutton(sign_up, text="Show password", bg='#ffffff', fg='#27221c',
                                      command=password_command2)
-        show_password2.place(x=380, y=332)
+        show_password2.place(x=380/2, y=332)
 
 
         #AccountSystem_window.mainloop()
