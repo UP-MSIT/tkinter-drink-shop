@@ -14,7 +14,7 @@ import tempfile
 import AccountSystem
 import Accounts
 import admin_start
-import Inventory
+import Bill
 # ============================================
 
 
@@ -119,7 +119,7 @@ class SecondPage:
                 Manage_window.title("Drink Management System")
 
                 # window Icon
-                icon = PhotoImage(file='images\\CoffeeShop-brand-logo.png')
+                icon = PhotoImage(file='images\\replace_this.png')
                 Manage_window.iconphoto(True, icon)
 
                 # Navigating through windows
@@ -152,7 +152,7 @@ class SecondPage:
                 coverFrame2.place(x=0, y=80, width=290, height=630)
 
                 # ====== MENU BAR ==========
-                logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+                logoIcon = Image.open('images\\replace_this.png')
                 photo = ImageTk.PhotoImage(logoIcon)
                 logo = Label(product_page, image=photo, bg='#f6f6f9')
                 logo.image = photo
@@ -172,7 +172,7 @@ class SecondPage:
 
                 # ========== HOME BUTTON =======
                 home_button = Button(product_page, text='Home', bg='#f6f6f9', font=("", 13, "bold"), bd=0, fg='#7a7a7a',
-                                     cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+                                     cursor='hand2', activebackground='#036553', activeforeground='white',
                                      command=lambda: home())
                 home_button.place(x=70, y=15)
 
@@ -230,7 +230,7 @@ class SecondPage:
                 # ========== LOG OUT =======
                 logout_button = Button(product_page, text='Logout', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
                                        fg='#7a7a7a',
-                                       cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+                                       cursor='hand2', activebackground='#036553', activeforeground='white',
                                        command=logout)
                 logout_button.place(x=250, y=15)
 
@@ -366,7 +366,7 @@ class SecondPage:
 
                 def add_coffee():
                     if coffee_id.get() == "":
-                        messagebox.showerror("Failed", "Coffee Number( # ) can't be empty")
+                        messagebox.showerror("Failed", "Drink Number( # ) can't be empty")
                     else:
                         conn = sqlite3.connect("./Database/CoffeeShop.db")
                         cur = conn.cursor()
@@ -375,7 +375,7 @@ class SecondPage:
                         conn.commit()
                         conn.close()
                         show_all()
-                        messagebox.showinfo("Success", "Coffee Records Added Successfully")
+                        messagebox.showinfo("Success", "Drink Records Added Successfully")
 
                 def delete_records():
                     try:
@@ -413,7 +413,7 @@ class SecondPage:
                     conn.close()
                     show_all()
                     # self.Reset()
-                    messagebox.showinfo("Success", "Coffee Record updated Successfully")
+                    messagebox.showinfo("Success", "Drink Record updated Successfully")
 
                 self.button3 = Button(coverFrame3)
                 self.button3.place(relx=0.539, rely=0.849, width=86, height=25)
@@ -477,7 +477,7 @@ class SecondPage:
 
                 # PURCHASE BUTTON
                 purchaseFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
-                purchaseFrame.place(x=200, y=10, width=100, height=80)
+                purchaseFrame.place(x=50, y=10, width=100, height=80)
 
                 purchaseLabel = Label(purchaseFrame, text="Purchase", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
                 purchaseLabel.place(x=10, y=0)
@@ -490,29 +490,29 @@ class SecondPage:
                 purchase.place(x=0, y=22)
 
                 # PRODUCTS BUTTON
-                productsFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
-                productsFrame.place(x=50, y=10, width=100, height=80)
+                # productsFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
+                # productsFrame.place(x=50, y=10, width=100, height=80)
 
-                productsLabel = Label(productsFrame, text="Products", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
-                productsLabel.place(x=10, y=0)
+                # productsLabel = Label(productsFrame, text="Products", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
+                # productsLabel.place(x=10, y=0)
 
-                productsIcon = Image.open('images\\shopping-bag.png')
-                photo = ImageTk.PhotoImage(productsIcon)
-                products = Button(productsFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
-                                  activebackground="#ffffff")
-                products.image = photo
-                products.place(x=0, y=22)
+                # productsIcon = Image.open('images\\shopping-bag.png')
+                # photo = ImageTk.PhotoImage(productsIcon)
+                # products = Button(productsFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
+                #                   activebackground="#ffffff")
+                # products.image = photo
+                # products.place(x=0, y=22)
 
                 # BILL BUTTON
 
                 def bill():
                     win = Toplevel()
-                    Inventory.InventoryPage(win)
+                    Bill.BillPage(win)
                     Manage_window.withdraw()
                     win.deiconify()
 
                 billFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
-                billFrame.place(x=350, y=10, width=100, height=80)
+                billFrame.place(x=200, y=10, width=100, height=80)
 
                 billLabel = Label(billFrame, text="   Bill", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
                 billLabel.place(x=10, y=0)
@@ -574,7 +574,7 @@ class SecondPage:
                 )
 
                 coffee_tree.heading("CoffeeID", text="#", anchor=N)
-                coffee_tree.heading("CoffeeName", text="COFFEE", anchor=N)
+                coffee_tree.heading("CoffeeName", text="DRINK", anchor=N)
                 coffee_tree.heading("Type", text="TYPE", anchor=N)
                 coffee_tree.heading("Discount", text="DISCOUNT", anchor=N)
                 coffee_tree.heading("InStock", text="IN STOCK", anchor=N)
@@ -695,12 +695,19 @@ class SecondPage:
 
         class BillWindow:
             def __init__(self, top=None):
-                top.geometry("1350x768")
+                screen_width = top.winfo_screenwidth()
+                screen_height = top.winfo_height()
+                app_width = 1350
+                app_height = 768
+                x = (screen_width / 2) - (app_width / 2)
+                y = (screen_height / 160) - (app_height / 160)
+                top.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
+                # top.geometry("1350x768")
                 top.resizable(0, 0)
                 top.title("Billing Management")
                 top.config(background='#f6f6f9')
 
-                logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+                logoIcon = Image.open('images\\replace_this.png')
                 photo = ImageTk.PhotoImage(logoIcon)
                 logo = Label(biller, image=photo, bg='#f6f6f9')
                 logo.image = photo
@@ -720,7 +727,7 @@ class SecondPage:
 
                 # ========== HOME BUTTON =======
                 home_button = Button(biller, text='Home', bg='#f6f6f9', font=("", 13, "bold"), bd=0, fg='#7a7a7a',
-                                     cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+                                     cursor='hand2', activebackground='#036553', activeforeground='white',
                                      command=lambda: home())
                 home_button.place(x=70, y=15)
 
@@ -730,44 +737,44 @@ class SecondPage:
                     biller.destroy()
 
                 # ========== MANAGE BUTTON =======
-                manage_button = Button(biller, text='Manage', bg='#fd6a36', font=("", 13, "bold"), bd=0,
+                manage_button = Button(biller, text='Manage', bg='#036553', font=("", 13, "bold"), bd=0,
                                        fg='#ffffff',
-                                       cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a')
+                                       cursor='hand2', activebackground='#036553', activeforeground='white')
                 manage_button.place(x=150, y=15)
 
                 # ========== PRODUCTS BUTTON =======
-                product_button = Button(biller, text='Products', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
-                                        fg='#7a7a7a',
-                                        cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
-                                        command=lambda: product())
-                product_button.place(x=250, y=15)
+                # product_button = Button(biller, text='Products', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
+                #                         fg='#7a7a7a',
+                #                         cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+                #                         command=lambda: product())
+                # product_button.place(x=250, y=15)
 
                 # ========== HELP BUTTON =======
 
-                def help():
-                    win = Toplevel()
-                    window_width = 1366
-                    window_height = 768
-                    screen_width = win.winfo_screenwidth()
-                    screen_height = win.winfo_screenheight()
-                    position_top = int(screen_height / 4 - window_height / 4)
-                    position_right = int(screen_width / 2 - window_width / 2)
-                    win.geometry(f'{window_width}x{window_height}+{position_right}+{position_top}')
-                    win.title('Forgot Password')
-                    #win.configure(background=('images/hel'))
-                    win.resizable(0, 0)
+                # def help():
+                #     win = Toplevel()
+                #     window_width = 1366
+                #     window_height = 768
+                #     screen_width = win.winfo_screenwidth()
+                #     screen_height = win.winfo_screenheight()
+                #     position_top = int(screen_height / 4 - window_height / 4)
+                #     position_right = int(screen_width / 2 - window_width / 2)
+                #     win.geometry(f'{window_width}x{window_height}+{position_right}+{position_top}')
+                #     win.title('Forgot Password')
+                #     #win.configure(background=('images/hel'))
+                #     win.resizable(0, 0)
 
-                    # Coffee Image
-                    bgImage = Image.open('images\\help.png')
-                    photo = ImageTk.PhotoImage(bgImage)
-                    Img = Label(win, image=photo)
-                    Img.image = photo
-                    Img.place(x=0, y=0)
+                #     # Coffee Image
+                #     bgImage = Image.open('images\\help.png')
+                #     photo = ImageTk.PhotoImage(bgImage)
+                #     Img = Label(win, image=photo)
+                #     Img.image = photo
+                #     Img.place(x=0, y=0)
 
-                help_button = Button(biller, text='Help', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
-                                     fg='#7a7a7a', command=help,
-                                     cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a')
-                help_button.place(x=360, y=15)
+                # help_button = Button(biller, text='Help', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
+                #                      fg='#7a7a7a', command=help,
+                #                      cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a')
+                # help_button.place(x=360, y=15)
 
                 def logout():
                     biller.withdraw()
@@ -777,9 +784,9 @@ class SecondPage:
                 # ========== LOG OUT =======
                 logout_button = Button(biller, text='Logout', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
                                        fg='#7a7a7a',
-                                       cursor='hand2', activebackground='#036553', activeforeground='#7a7a7a',
+                                       cursor='hand2', activebackground='#036553', activeforeground='white',
                                        command=logout)
-                logout_button.place(x=420, y=15)
+                logout_button.place(x=250, y=15)
 
                 def product():
                     biller.withdraw()
@@ -787,22 +794,22 @@ class SecondPage:
                     biller.destroy()
 
                 # PURCHASE BUTTON
-                purchaseFrame = LabelFrame(biller, bg='#ffffff', bd='2.4')
-                purchaseFrame.place(x=670, y=80, width=100, height=80)
+                # purchaseFrame = LabelFrame(biller, bg='#ffffff', bd='2.4')
+                # purchaseFrame.place(x=670, y=80, width=100, height=80)
 
-                purchaseLabel = Label(purchaseFrame, text="Purchase", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
-                purchaseLabel.place(x=10, y=0)
+                # purchaseLabel = Label(purchaseFrame, text="Purchase", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
+                # purchaseLabel.place(x=10, y=0)
 
-                purchaseIcon = Image.open('images\\marketplace.png')
-                photo = ImageTk.PhotoImage(purchaseIcon)
-                purchase = Button(purchaseFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
-                                  activebackground="#ffffff", command=product)
-                purchase.image = photo
-                purchase.place(x=0, y=22)
+                # purchaseIcon = Image.open('images\\marketplace.png')
+                # photo = ImageTk.PhotoImage(purchaseIcon)
+                # purchase = Button(purchaseFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
+                #                   activebackground="#ffffff", command=product)
+                # purchase.image = photo
+                # purchase.place(x=0, y=22)
 
                 # PRODUCTS BUTTON
                 productsFrame = LabelFrame(biller, bg='#ffffff', bd='2.4')
-                productsFrame.place(x=820, y=80, width=100, height=80)
+                productsFrame.place(x=580, y=80, width=100, height=80)
 
                 productsLabel = Label(productsFrame, text="Products", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
                 productsLabel.place(x=10, y=0)
@@ -816,7 +823,7 @@ class SecondPage:
 
                 def bill():
                     win = Toplevel()
-                    Inventory.InventoryPage(win)
+                    Bill.BillPage(win)
                     biller.withdraw()
                     win.deiconify()
 
@@ -828,7 +835,7 @@ class SecondPage:
 
                 # BILL BUTTON
                 billFrame = LabelFrame(biller, bg='#ffffff', bd='2.4')
-                billFrame.place(x=970, y=80, width=100, height=80)
+                billFrame.place(x=720, y=80, width=100, height=80)
 
                 billLabel = Label(billFrame, text="   Bill", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
                 billLabel.place(x=10, y=0)
@@ -841,18 +848,18 @@ class SecondPage:
                 bill.place(x=0, y=22)
 
                 # ACCOUNTS BUTTON
-                accountsFrame = LabelFrame(biller, bg='#ffffff', bd='2.4')
-                accountsFrame.place(x=1120, y=80, width=100, height=80)
+                # accountsFrame = LabelFrame(biller, bg='#ffffff', bd='2.4')
+                # accountsFrame.place(x=1120, y=80, width=100, height=80)
 
-                accountsLabel = Label(accountsFrame, text="Accounts", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
-                accountsLabel.place(x=10, y=0)
+                # accountsLabel = Label(accountsFrame, text="Accounts", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
+                # accountsLabel.place(x=10, y=0)
 
-                accountsIcon = Image.open('images\\accounts_icon.png')
-                photo = ImageTk.PhotoImage(accountsIcon)
-                accounts = Button(accountsFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
-                                  activebackground="#ffffff", command=account)
-                accounts.image = photo
-                accounts.place(x=0, y=22)
+                # accountsIcon = Image.open('images\\accounts_icon.png')
+                # photo = ImageTk.PhotoImage(accountsIcon)
+                # accounts = Button(accountsFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
+                #                   activebackground="#ffffff", command=account)
+                # accounts.image = photo
+                # accounts.place(x=0, y=22)
 
                 self.coverFrame2 = Frame(biller, bg='#ffffff')
                 self.coverFrame2.place(x=0, y=80, width=575, height=645)
@@ -909,7 +916,7 @@ class SecondPage:
                 self.coffee_name.place(x=45, y=430)
                 self.coffee_name.configure(font="-family {Poppins Light} -size 11")
                 self.coffee_name.configure(foreground="#000000")
-                self.coffee_name.configure(text="Coffee Name")
+                self.coffee_name.configure(text="Name")
                 self.coffee_name.configure(background="#ffffff")
 
                 self.discount = Label(biller)
@@ -952,43 +959,43 @@ class SecondPage:
                 self.companyNumber_txt = str(8798236784)
                 self.entry2.insert(0, self.companyNumber_txt)
 
-                self.entry3 = Entry(biller, highlightthickness=2)
-                self.entry3.place(relx=0.402, rely=0.019, width=350, height=29)
-                self.entry3.configure(font="-family {Poppins} -size 11")
-                self.entry3.configure(relief="flat")
-                self.entry3.configure(highlightbackground="#6b6a69", highlightcolor="#fd6a36")
-                self.entry3.configure(textvariable=cust_search_bill)
-                self.search_txt = "Enter Bill Number to Search............"
-                self.entry3.insert(0, self.search_txt)
-                self.entry3.bind("<1>", self.clear_search)
+                # self.entry3 = Entry(biller, highlightthickness=2)
+                # self.entry3.place(relx=0.402, rely=0.019, width=350, height=29)
+                # self.entry3.configure(font="-family {Poppins} -size 11")
+                # self.entry3.configure(relief="flat")
+                # self.entry3.configure(highlightbackground="#6b6a69", highlightcolor="#fd6a36")
+                # self.entry3.configure(textvariable=cust_search_bill)
+                # self.search_txt = "Enter Bill Number to Search............"
+                # self.entry3.insert(0, self.search_txt)
+                # self.entry3.bind("<1>", self.clear_search)
 
-                searchIcon = Image.open('images\\search.png')
-                photo = ImageTk.PhotoImage(searchIcon)
-                search = Label(biller, image=photo, bg='#f6f6f9')
-                search.image = photo
-                search.place(relx=0.378, rely=0.019)
+                # searchIcon = Image.open('images\\search.png')
+                # photo = ImageTk.PhotoImage(searchIcon)
+                # search = Label(biller, image=photo, bg='#f6f6f9')
+                # search.image = photo
+                # search.place(relx=0.378, rely=0.019)
 
-                self.button2 = Button(biller)
-                self.button2.place(relx=0.660, rely=0.019, width=76, height=29)
-                self.button2.configure(relief="flat")
-                self.button2.configure(overrelief="flat")
-                self.button2.configure(activebackground="#fd6a36")
-                self.button2.configure(cursor="hand2")
-                self.button2.configure(foreground="#ffffff")
-                self.button2.configure(background="#fd6a36")
-                self.button2.configure(font="-family {Poppins SemiBold} -size 12")
-                self.button2.configure(borderwidth="0")
-                self.button2.configure(text="""Search""")
-                self.button2.configure(command=self.search_bill)
+                # self.button2 = Button(biller)
+                # self.button2.place(relx=0.660, rely=0.019, width=76, height=29)
+                # self.button2.configure(relief="flat")
+                # self.button2.configure(overrelief="flat")
+                # self.button2.configure(activebackground="#fd6a36")
+                # self.button2.configure(cursor="hand2")
+                # self.button2.configure(foreground="#ffffff")
+                # self.button2.configure(background="#fd6a36")
+                # self.button2.configure(font="-family {Poppins SemiBold} -size 12")
+                # self.button2.configure(borderwidth="0")
+                # self.button2.configure(text="""Search""")
+                # self.button2.configure(command=self.search_bill)
 
                 self.button3 = Button(biller)
                 self.button3.place(relx=0.048, rely=0.869, width=86, height=25)
                 self.button3.configure(relief="flat")
                 self.button3.configure(overrelief="flat")
-                self.button3.configure(activebackground="#fd6a36")
+                self.button3.configure(activebackground="#036553")
                 self.button3.configure(cursor="hand2")
                 self.button3.configure(foreground="#ffffff")
-                self.button3.configure(background="#fd6a36")
+                self.button3.configure(background="#036553")
                 self.button3.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button3.configure(borderwidth="0")
                 self.button3.configure(text="""Total""")
@@ -998,10 +1005,10 @@ class SecondPage:
                 self.button4.place(relx=0.141, rely=0.869, width=84, height=25)
                 self.button4.configure(relief="flat")
                 self.button4.configure(overrelief="flat")
-                self.button4.configure(activebackground="#fd6a36")
+                self.button4.configure(activebackground="#036553")
                 self.button4.configure(cursor="hand2")
                 self.button4.configure(foreground="#ffffff")
-                self.button4.configure(background="#fd6a36")
+                self.button4.configure(background="#036553")
                 self.button4.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button4.configure(borderwidth="0")
                 self.button4.configure(text="""Generate""")
@@ -1011,10 +1018,10 @@ class SecondPage:
                 self.button5.place(relx=0.230, rely=0.869, width=86, height=25)
                 self.button5.configure(relief="flat")
                 self.button5.configure(overrelief="flat")
-                self.button5.configure(activebackground="#fd6a36")
+                self.button5.configure(activebackground="#036553")
                 self.button5.configure(cursor="hand2")
                 self.button5.configure(foreground="#ffffff")
-                self.button5.configure(background="#fd6a36")
+                self.button5.configure(background="#036553")
                 self.button5.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button5.configure(borderwidth="0")
                 self.button5.configure(text="""Clear""")
@@ -1030,10 +1037,10 @@ class SecondPage:
                 self.button6.place(relx=0.762, rely=0.022, width=86, height=25)
                 self.button6.configure(relief="flat")
                 self.button6.configure(overrelief="flat")
-                self.button6.configure(activebackground="#fd6a36")
+                self.button6.configure(activebackground="#036553")
                 self.button6.configure(cursor="hand2")
                 self.button6.configure(foreground="#ffffff")
-                self.button6.configure(background="#fd6a36")
+                self.button6.configure(background="#036553")
                 self.button6.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button6.configure(borderwidth="0")
                 self.button6.configure(text="""Exit""")
@@ -1043,10 +1050,10 @@ class SecondPage:
                 self.button7.place(relx=0.098, rely=0.784, width=86, height=26)
                 self.button7.configure(relief="flat")
                 self.button7.configure(overrelief="flat")
-                self.button7.configure(activebackground="#fd6a36")
+                self.button7.configure(activebackground="#036553")
                 self.button7.configure(cursor="hand2")
                 self.button7.configure(foreground="#ffffff")
-                self.button7.configure(background="#fd6a36")
+                self.button7.configure(background="#036553")
                 self.button7.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button7.configure(borderwidth="0")
                 self.button7.configure(text="""Add To Cart""")
@@ -1056,10 +1063,10 @@ class SecondPage:
                 self.button8.place(relx=0.274, rely=0.784, width=84, height=26)
                 self.button8.configure(relief="flat")
                 self.button8.configure(overrelief="flat")
-                self.button8.configure(activebackground="#fd6a36")
+                self.button8.configure(activebackground="#036553")
                 self.button8.configure(cursor="hand2")
                 self.button8.configure(foreground="#ffffff")
-                self.button8.configure(background="#fd6a36")
+                self.button8.configure(background="#036553")
                 self.button8.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button8.configure(borderwidth="0")
                 self.button8.configure(text="""Clear""")
@@ -1069,10 +1076,10 @@ class SecondPage:
                 self.button9.place(relx=0.194, rely=0.784, width=68, height=26)
                 self.button9.configure(relief="flat")
                 self.button9.configure(overrelief="flat")
-                self.button9.configure(activebackground="#fd6a36")
+                self.button9.configure(activebackground="#036553")
                 self.button9.configure(cursor="hand2")
                 self.button9.configure(foreground="#ffffff")
-                self.button9.configure(background="#fd6a36")
+                self.button9.configure(background="#036553")
                 self.button9.configure(font="-family {Poppins SemiBold} -size 10")
                 self.button9.configure(borderwidth="0")
                 self.button9.configure(text="""Remove""")
@@ -1122,9 +1129,9 @@ class SecondPage:
                 self.Scrolledtext1.configure(borderwidth=0)
                 self.Scrolledtext1.configure(font="-family {Podkova} -size 9")
                 self.Scrolledtext1.configure(state="normal")
-                head = "\n\n\t\t GIDEONS COFFEE SHOP\n" \
-                       "\t\t C12 TEMA GHANA\n\n\t\t THANK YOU FOR CHOOSING OUR COFFEE\n" \
-                       "\t\t WE HOPE TO SEE YOU NEXT TIME\n\n\n" + "\tCOFFEE\t  -----  \tQUANTITY\t  -----  \tPRICE ( $ )\n"
+                head = "\n\n\t\t DRINK SHOP\n" \
+                       "\t\t C12 TEMA GHANA\n\n\t\t THANK YOU FOR CHOOSING OUR DRINK\n" \
+                       "\t\t WE HOPE TO SEE YOU NEXT TIME\n\n\n" + "DRINK\t  -----  \tQUANTITY\t  -----  \tPRICE ( $ )\n"
                 self.Scrolledtext1.insert('insert', head)
 
                 self.combo1.bind("<<ComboboxSelected>>", self.get_category)
@@ -1431,9 +1438,9 @@ class SecondPage:
                 # self.Scrolledtext1.configure(state="disabled")
                 self.cart.remove_items()
                 self.state = 1
-                head = "\n\n\t\t GIDEONS COFFEE SHOP\n" \
-                       "\t\t C12 TEMA GHANA\n\n\t\t THANK YOU FOR CHOOSING OUR COFFEE\n" \
-                       "\t\t WE HOPE TO SEE YOU NEXT TIME\n\n\n" + "\tCOFFEE\t  -----  \tQUANTITY\t  -----  \tPRICE ( $ )\n"
+                head = "\n\n\t\t DRINK SHOP\n" \
+                       "\t\t C12 TEMA GHANA\n\n\t\t THANK YOU FOR CHOOSING OUR DRINK\n" \
+                       "\t\t WE HOPE TO SEE YOU NEXT TIME\n\n\n" + "\DRINK\t  -----  \tQUANTITY\t  -----  \tPRICE ( $ )\n"
                 self.Scrolledtext1.insert('insert', head)
 
             def clear_selection(self):

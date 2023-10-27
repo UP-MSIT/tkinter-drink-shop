@@ -9,7 +9,7 @@ import AccountSystem
 import Accounts
 
 
-class InventoryPage:
+class BillPage:
     def __init__(self, Manage_window):
         self.Manage_window = Manage_window
 
@@ -24,10 +24,10 @@ class InventoryPage:
         y = (screen_height / 160) - (app_height / 160)
         Manage_window.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
 
-        Manage_window.title("Coffee Management System")
+        Manage_window.title("Bill")
 
         # window Icon
-        icon = PhotoImage(file='images\\CoffeeShop-brand-logo.png')
+        icon = PhotoImage(file='images\\replace_this.png')
         Manage_window.iconphoto(True, icon)
 
         # Navigating through windows
@@ -60,13 +60,14 @@ class InventoryPage:
         coverFrame2.place(x=0, y=80, width=320, height=630)
 
         # ====== MENU BAR ==========
-        logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+        logoIcon = Image.open('images\\replace_this.png')
         photo = ImageTk.PhotoImage(logoIcon)
         logo = Label(product_page, image=photo, bg='#f6f6f9')
         logo.image = photo
         logo.place(x=0, y=0)
 
-        menuBar_line = Canvas(product_page, width=1500, height=1.5, bg="#e6e6e6", highlightthickness=0)
+        menuBar_line = Canvas(product_page, width=1500,
+                              height=1.5, bg="#e6e6e6", highlightthickness=0)
         menuBar_line.place(x=0, y=60)
 
         admIcon = Image.open('images\\feeling.png')
@@ -75,12 +76,13 @@ class InventoryPage:
         adm.image = photo
         adm.place(x=1250, y=5)
 
-        admLabel = Label(product_page, text='ADMIN', font=('yu gothic ui', 18, 'bold'), fg='#ffc329', bg='#f6f6f9')
+        admLabel = Label(product_page, text='ADMIN', font=(
+            'yu gothic ui', 18, 'bold'), fg='#ffc329', bg='#f6f6f9')
         admLabel.place(x=1160, y=11)
 
         # ========== HOME BUTTON =======
         home_button = Button(product_page, text='Home', bg='#f6f6f9', font=("", 13, "bold"), bd=0, fg='#7a7a7a',
-                             cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+                             cursor='hand2', activebackground='#036553', activeforeground='white',
                              command=lambda: home())
         home_button.place(x=70, y=15)
 
@@ -91,23 +93,23 @@ class InventoryPage:
             win.deiconify()
 
         # ========== MANAGE BUTTON =======
-        manage_button = Button(product_page, text='Manage', bg='#fd6a36', font=("", 13, "bold"), bd=0,
+        manage_button = Button(product_page, text='Manage', bg='#036553', font=("", 13, "bold"), bd=0,
                                fg='#ffffff', command=lambda: product(),
-                               cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a')
+                               cursor='hand2', activebackground='#036553', activeforeground='white')
         manage_button.place(x=150, y=15)
 
-        # ========== PRODUCTS BUTTON =======
-        product_button = Button(product_page, text='Products', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
-                                fg='#7a7a7a',
-                                cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
-                                command=lambda: product())
-        product_button.place(x=250, y=15)
+        #  ========== PRODUCTS BUTTON =======
+        # product_button = Button(product_page, text='Products', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
+        #                         fg='#7a7a7a',
+        #                         cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+        #                         command=lambda: product())
+        # product_button.place(x=250, y=15)
 
-        # ========== HELP BUTTON =======
-        help_button = Button(product_page, text='Help', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
-                             fg='#7a7a7a',
-                             cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a')
-        help_button.place(x=360, y=15)
+        # # ========== HELP BUTTON =======
+        # help_button = Button(product_page, text='Help', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
+        #                      fg='#7a7a7a',
+        #                      cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a')
+        # help_button.place(x=360, y=15)
 
         def logout():
             win = Toplevel()
@@ -118,9 +120,9 @@ class InventoryPage:
         # ========== LOG OUT =======
         logout_button = Button(product_page, text='Logout', bg='#f6f6f9', font=("", 13, "bold"), bd=0,
                                fg='#7a7a7a',
-                               cursor='hand2', activebackground='#fd6a36', activeforeground='#7a7a7a',
+                               cursor='hand2', activebackground='#036553', activeforeground='white',
                                command=logout)
-        logout_button.place(x=420, y=15)
+        logout_button.place(x=250, y=15)
 
         def product():
             Manage_window.withdraw()
@@ -128,7 +130,8 @@ class InventoryPage:
             Manage_window.destroy()
 
         def exit_command():
-            exit_command = messagebox.askyesno("Exit", "Are you sure you want to exit")
+            exit_command = messagebox.askyesno(
+                "Exit", "Are you sure you want to exit")
             if exit_command > 0:
                 Manage_window.destroy()
 
@@ -136,10 +139,10 @@ class InventoryPage:
         self.button6.place(relx=0.762, rely=0.022, width=86, height=25)
         self.button6.configure(relief="flat")
         self.button6.configure(overrelief="flat")
-        self.button6.configure(activebackground="#fd6a36")
+        self.button6.configure(activebackground="#036553")
         self.button6.configure(cursor="hand2")
         self.button6.configure(foreground="#ffffff")
-        self.button6.configure(background="#fd6a36")
+        self.button6.configure(background="#036553")
         self.button6.configure(font="-family {Poppins SemiBold} -size 10")
         self.button6.configure(borderwidth="0")
         self.button6.configure(text="""Exit""")
@@ -155,49 +158,59 @@ class InventoryPage:
         bill_details = StringVar()
 
         # COFFEE NAME AND ENTRY
-        coffeeLabel = Label(coverFrame3, text="BILL NUMBER", bg='#ffffff', font=("yu gothic ui", 12, "bold"))
+        coffeeLabel = Label(coverFrame3, text="BILL NUMBER",
+                            bg='#ffffff', font=("yu gothic ui", 12, "bold"))
         coffeeLabel.place(x=90, y=10)
 
         coffeName_entry = Entry(coverFrame3, highlightthickness=2, relief=FLAT, bg="#ffffff", fg="#6b6a69",
-                                 font=("", 12, 'bold'), textvariable=bill_number)
+                                font=("", 12, 'bold'), textvariable=bill_number, state="readonly")
         coffeName_entry.place(x=10, y=40, width=275, height=34)
-        coffeName_entry.config(highlightbackground="#6b6a69", highlightcolor="#ff6c38")
+        coffeName_entry.config(
+            highlightbackground="#6b6a69", highlightcolor="#036553")
 
         # COFFEE TYPE AND ENTRY
-        typeLabel = Label(coverFrame3, text="DATE", bg='#ffffff', font=("yu gothic ui", 12, "bold"))
+        typeLabel = Label(coverFrame3, text="DATE", bg='#ffffff',
+                          font=("yu gothic ui", 12, "bold"))
         typeLabel.place(x=120, y=75)
 
         typeName_entry = Entry(coverFrame3, highlightthickness=2, relief=FLAT, bg="#ffffff", fg="#6b6a69",
-                               font=("", 12, 'bold'), textvariable=date)
+                               font=("", 12, 'bold'), textvariable=date, state="readonly")
         typeName_entry.place(x=10, y=105, width=275, height=34)
-        typeName_entry.config(highlightbackground="#6b6a69", highlightcolor="#ff6c38")
+        typeName_entry.config(highlightbackground="#6b6a69",
+                              highlightcolor="#036553")
 
         # COFFEE DISCOUNT AND ENTRY
-        discountLabel = Label(coverFrame3, text="CASHIER NAME", bg='#ffffff', font=("yu gothic ui", 12, "bold"))
+        discountLabel = Label(coverFrame3, text="CASHIER NAME",
+                              bg='#ffffff', font=("yu gothic ui", 12, "bold"))
         discountLabel.place(x=90, y=140)
 
         discountName_entry = Entry(coverFrame3, highlightthickness=2, relief=FLAT, bg="#ffffff", fg="#6b6a69",
-                                   font=("", 12, 'bold'), textvariable=cashier_name)
+                                   font=("", 12, 'bold'), textvariable=cashier_name, state="readonly")
         discountName_entry.place(x=10, y=170, width=275, height=34)
-        discountName_entry.config(highlightbackground="#6b6a69", highlightcolor="#ff6c38")
+        discountName_entry.config(
+            highlightbackground="#6b6a69", highlightcolor="#036553")
 
         # IN STOCK AND ENTRY
-        inStockLabel = Label(coverFrame3, text="CONTACT", bg='#ffffff', font=("yu gothic ui", 12, "bold"))
+        inStockLabel = Label(coverFrame3, text="CONTACT",
+                             bg='#ffffff', font=("yu gothic ui", 12, "bold"))
         inStockLabel.place(x=110, y=210)
 
         inStock_entry = Entry(coverFrame3, highlightthickness=2, relief=FLAT, bg="#ffffff", fg="#6b6a69",
-                              font=("", 12, 'bold'), textvariable=contact)
+                              font=("", 12, 'bold'), textvariable=contact, state="readonly")
         inStock_entry.place(x=10, y=240, width=275, height=34)
-        inStock_entry.config(highlightbackground="#6b6a69", highlightcolor="#ff6c38")
+        inStock_entry.config(highlightbackground="#6b6a69",
+                             highlightcolor="#036553")
 
         # PRICE AND ENTRY
-        priceLabel = Label(coverFrame2, text="BILL DETAILS", bg='#ffffff', font=("yu gothic ui", 12, "bold"))
+        priceLabel = Label(coverFrame2, text="BILL DETAILS",
+                           bg='#ffffff', font=("yu gothic ui", 12, "bold"))
         priceLabel.place(x=115, y=369)
 
         price_entry = Label(product_page, highlightthickness=2, relief=FLAT, bg="#ffffff", fg="#6b6a69",
-                            font=("", 12, 'bold'), textvariable=bill_details)
+                            font=("", 8, 'bold'), textvariable=bill_details)
         price_entry.place(x=5, y=480, width=355, height=195)
-        price_entry.config(highlightbackground="#6b6a69", highlightcolor="#ff6c38")
+        price_entry.config(highlightbackground="#6b6a69",
+                           highlightcolor="#036553")
 
         # =====================================================================================================================
         #                TKINTER     TREE VIEW
@@ -251,7 +264,8 @@ class InventoryPage:
                     show_all()
                     clear_all()
                     conn.close()
-                    messagebox.showinfo("Success", f" {tree_view_values} records has been deleted Successfully")
+                    messagebox.showinfo(
+                        "Success", f" {tree_view_values} records has been deleted Successfully")
                 else:
                     pass
 
@@ -260,15 +274,14 @@ class InventoryPage:
                 messagebox.showerror("Error",
                                      "There is some error deleting the data\n Make sure you have Selected the data")
 
-
         self.button3 = Button(coverFrame3)
         self.button3.place(relx=0.599, rely=0.849, width=86, height=25)
         self.button3.configure(relief="flat")
         self.button3.configure(overrelief="flat")
-        self.button3.configure(activebackground="#fd6a36")
+        self.button3.configure(activebackground="#036553")
         self.button3.configure(cursor="hand2")
         self.button3.configure(foreground="#ffffff")
-        self.button3.configure(background="#fd6a36")
+        self.button3.configure(background="#036553")
         self.button3.configure(font="-family {Poppins SemiBold} -size 10")
         self.button3.configure(borderwidth="0")
         self.button3.configure(text="""Delete""")
@@ -278,10 +291,10 @@ class InventoryPage:
         self.button6.place(relx=0.209, rely=0.849, width=86, height=25)
         self.button6.configure(relief="flat")
         self.button6.configure(overrelief="flat")
-        self.button6.configure(activebackground="#fd6a36")
+        self.button6.configure(activebackground="#036553")
         self.button6.configure(cursor="hand2")
         self.button6.configure(foreground="#ffffff")
-        self.button6.configure(background="#fd6a36")
+        self.button6.configure(background="#036553")
         self.button6.configure(font="-family {Poppins SemiBold} -size 10")
         self.button6.configure(borderwidth="0")
         self.button6.configure(text="""Clear""")
@@ -294,24 +307,25 @@ class InventoryPage:
             win.deiconify()
 
         # PURCHASE BUTTON
-        purchaseFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
-        purchaseFrame.place(x=200, y=10, width=100, height=80)
+        # purchaseFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
+        # purchaseFrame.place(x=200, y=10, width=100, height=80)
 
-        purchaseLabel = Label(purchaseFrame, text="Purchase", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
-        purchaseLabel.place(x=10, y=0)
+        # purchaseLabel = Label(purchaseFrame, text="Purchase", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
+        # purchaseLabel.place(x=10, y=0)
 
-        purchaseIcon = Image.open('images\\marketplace.png')
-        photo = ImageTk.PhotoImage(purchaseIcon)
-        purchase = Button(purchaseFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
-                          activebackground="#ffffff", command=lambda: product())
-        purchase.image = photo
-        purchase.place(x=0, y=22)
+        # purchaseIcon = Image.open('images\\marketplace.png')
+        # photo = ImageTk.PhotoImage(purchaseIcon)
+        # purchase = Button(purchaseFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
+        #                   activebackground="#ffffff", command=lambda: product())
+        # purchase.image = photo
+        # purchase.place(x=0, y=22)
 
         # PRODUCTS BUTTON
         productsFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
         productsFrame.place(x=50, y=10, width=100, height=80)
 
-        productsLabel = Label(productsFrame, text="Products", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
+        productsLabel = Label(productsFrame, text="Products", font=(
+            "yu gothic ui", 12, 'bold'), bg='#ffffff')
         productsLabel.place(x=10, y=0)
 
         productsIcon = Image.open('images\\shopping-bag.png')
@@ -322,32 +336,32 @@ class InventoryPage:
         products.place(x=0, y=22)
 
         # BILL BUTTON
-        billFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
-        billFrame.place(x=350, y=10, width=100, height=80)
+        # billFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
+        # billFrame.place(x=350, y=10, width=100, height=80)
 
-        billLabel = Label(billFrame, text="   Bill", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
-        billLabel.place(x=10, y=0)
+        # billLabel = Label(billFrame, text="   Bill", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
+        # billLabel.place(x=10, y=0)
 
-        billIcon = Image.open('images\\bill.png')
-        photo = ImageTk.PhotoImage(billIcon)
-        bill = Button(billFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
-                      activebackground="#ffffff")
-        bill.image = photo
-        bill.place(x=0, y=22)
+        # billIcon = Image.open('images\\bill.png')
+        # photo = ImageTk.PhotoImage(billIcon)
+        # bill = Button(billFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
+        #               activebackground="#ffffff")
+        # bill.image = photo
+        # bill.place(x=0, y=22)
 
         # ACCOUNTS BUTTON
-        accountsFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
-        accountsFrame.place(x=500, y=10, width=100, height=80)
+        # accountsFrame = LabelFrame(coverFrame, bg='#ffffff', bd='2.4')
+        # accountsFrame.place(x=500, y=10, width=100, height=80)
 
-        accountsLabel = Label(accountsFrame, text="Accounts", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
-        accountsLabel.place(x=10, y=0)
+        # accountsLabel = Label(accountsFrame, text="Accounts", font=("yu gothic ui", 12, 'bold'), bg='#ffffff')
+        # accountsLabel.place(x=10, y=0)
 
-        accountsIcon = Image.open('images\\accounts_icon.png')
-        photo = ImageTk.PhotoImage(accountsIcon)
-        accounts = Button(accountsFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
-                          activebackground="#ffffff", command=accounts)
-        accounts.image = photo
-        accounts.place(x=0, y=22)
+        # accountsIcon = Image.open('images\\accounts_icon.png')
+        # photo = ImageTk.PhotoImage(accountsIcon)
+        # accounts = Button(accountsFrame, image=photo, bg='#ffffff', width=93, height=52, bd=0, cursor='hand2',
+        #                   activebackground="#ffffff", command=accounts)
+        # accounts.image = photo
+        # accounts.place(x=0, y=22)
 
         self.coverFrame2 = Frame(productsFrame, bg='#ffffff')
         self.coverFrame2.place(x=0, y=80, width=575, height=645)
@@ -382,77 +396,97 @@ class InventoryPage:
         coffee_tree.heading("Date", text="DATE", anchor=N)
         coffee_tree.heading("CashierName", text="CASHIER NAME", anchor=N)
         coffee_tree.heading("contact", text="CONTACT", anchor=N)
-        #coffee_tree.heading("BillDetails", text="#", anchor=N)
+        # coffee_tree.heading("BillDetails", text="#", anchor=N)
 
         coffee_tree.column("#0", stretch=NO, minwidth=0, width=0)
         coffee_tree.column("#1", stretch=NO, minwidth=0, width=230, anchor=N)
         coffee_tree.column("#2", stretch=NO, minwidth=0, width=150, anchor=N)
         coffee_tree.column("#3", stretch=NO, minwidth=0, width=352, anchor=N)
         coffee_tree.column("#4", stretch=NO, minwidth=0, width=110, anchor=N)
-        #coffee_tree.column("#5", stretch=NO, minwidth=0, width=50, anchor=N)
+        # coffee_tree.column("#5", stretch=NO, minwidth=0, width=50, anchor=N)
         coffee_tree.bind("<ButtonRelease-1>", coffee_info)
         show_all()
 
         # ============ LINES ================================
-        design_line = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line = Canvas(coverFrame, width=895, height=1.2,
+                             bg="#e6e6e6", highlightthickness=0)
         design_line.place(x=53, y=168)
 
-        design_line2 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line2 = Canvas(coverFrame, width=895,
+                              height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line2.place(x=53, y=188)
 
-        design_line3 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line3 = Canvas(coverFrame, width=895,
+                              height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line3.place(x=53, y=208)
 
-        design_line4 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line4 = Canvas(coverFrame, width=895,
+                              height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line4.place(x=53, y=228)
 
-        design_line5 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line5 = Canvas(coverFrame, width=895,
+                              height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line5.place(x=53, y=248)
 
-        design_line6 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line6 = Canvas(coverFrame, width=895,
+                              height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line6.place(x=53, y=268)
 
-        design_line7 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line7 = Canvas(coverFrame, width=895,
+                              height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line7.place(x=53, y=288)
 
-        design_line8 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line8 = Canvas(coverFrame, width=895,
+                              height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line8.place(x=53, y=308)
 
-        design_line9 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line9 = Canvas(coverFrame, width=895,
+                              height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line9.place(x=53, y=328)
 
-        design_line10 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line10 = Canvas(coverFrame, width=895,
+                               height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line10.place(x=53, y=348)
 
-        design_line11 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line11 = Canvas(coverFrame, width=895,
+                               height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line11.place(x=53, y=368)
 
-        design_line12 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line12 = Canvas(coverFrame, width=895,
+                               height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line12.place(x=53, y=388)
 
-        design_line13 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line13 = Canvas(coverFrame, width=895,
+                               height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line13.place(x=53, y=408)
 
-        design_line14 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line14 = Canvas(coverFrame, width=895,
+                               height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line14.place(x=53, y=428)
 
-        design_line15 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line15 = Canvas(coverFrame, width=895,
+                               height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line15.place(x=53, y=448)
 
-        design_line16 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line16 = Canvas(coverFrame, width=895,
+                               height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line16.place(x=53, y=468)
 
-        design_line17 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line17 = Canvas(coverFrame, width=895,
+                               height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line17.place(x=53, y=488)
 
-        design_line18 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line18 = Canvas(coverFrame, width=895,
+                               height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line18.place(x=53, y=508)
 
-        design_line19 = Canvas(coverFrame, width=895, height=1.2, bg="#e6e6e6", highlightthickness=0)
+        design_line19 = Canvas(coverFrame, width=895,
+                               height=1.2, bg="#e6e6e6", highlightthickness=0)
         design_line19.place(x=53, y=528)
 
         def exitt2():
-            sure = messagebox.askyesno("Exit", "Are you sure you want to exit?", parent=Manage_window)
+            sure = messagebox.askyesno(
+                "Exit", "Are you sure you want to exit?", parent=Manage_window)
             if sure == True:
                 Manage_window.destroy()
 
@@ -461,7 +495,7 @@ class InventoryPage:
 
 def page():
     window = Tk()
-    InventoryPage(window)
+    BillPage(window)
     window.mainloop()
 
 

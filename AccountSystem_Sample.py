@@ -18,7 +18,7 @@ class AccountPage:
         AccountSystem_window.resizable(0, 0)
 
         # window Icon
-        icon = PhotoImage(file='images\\CoffeeShop-brand-logo.png')
+        icon = PhotoImage(file='images\\replace_this.png')
         AccountSystem_window.iconphoto(True, icon)
 
         AccountSystem_window.title('COFFEE SHOP')
@@ -42,7 +42,7 @@ class AccountPage:
         landing_page.config(background='#ffffff')
 
         # ====== LOGO ==========
-        logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+        logoIcon = Image.open('images\\replace_this.png')
         photo = ImageTk.PhotoImage(logoIcon)
         logo = Label(landing_page, image=photo, bg='#ffffff')
         logo.image = photo
@@ -112,7 +112,7 @@ class AccountPage:
         sign_in.config(background='#ffffff')
 
         # ====== LOGO ==========
-        logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+        logoIcon = Image.open('images\\replace_this.png')
         photo = ImageTk.PhotoImage(logoIcon)
         logo = Label(sign_in, image=photo, bg='#ffffff')
         logo.image = photo
@@ -305,7 +305,7 @@ class AccountPage:
         sign_up.config(background='#ffffff')
 
         # ====== LOGO ==========
-        logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+        logoIcon = Image.open('images\\replace_this.png')
         photo = ImageTk.PhotoImage(logoIcon)
         logo = Label(sign_up, image=photo, bg='#ffffff')
         logo.image = photo

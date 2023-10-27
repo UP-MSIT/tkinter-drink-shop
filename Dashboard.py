@@ -23,7 +23,7 @@ class FirstPage:
             f"{app_width}x{app_height}+{int(x)}+{int(y)}")
 
         # window Icon
-        icon = PhotoImage(file='images\\CoffeeShop-brand-logo.png')
+        icon = PhotoImage(file='images\\replace_this.png')
         dashboard_window.iconphoto(True, icon)
         dashboard_window.title('Welcome')
 
@@ -45,7 +45,7 @@ class FirstPage:
         homepage.config(background='#ffffff')
 
         # ====== MENU BAR ==========
-        logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+        logoIcon = Image.open('images\\replace_this.png')
         photo = ImageTk.PhotoImage(logoIcon)
         logo = Label(homepage, image=photo, bg='#ffffff')
         logo.image = photo
@@ -61,7 +61,7 @@ class FirstPage:
         home_bg.image = photo
         home_bg.place(x=0, y=60)
 
-        brandIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+        brandIcon = Image.open('images\\replace_this.png')
         photo = ImageTk.PhotoImage(brandIcon)
         brandlogo = Label(homepage, image=photo, bg='black')
         brandlogo.image = photo

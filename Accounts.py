@@ -7,7 +7,7 @@ import os
 import admin_start
 import AccountSystem
 import admin
-import Inventory
+
 
 
 class InventoryPage:
@@ -25,16 +25,16 @@ class InventoryPage:
         y = (screen_height / 160) - (app_height / 160)
         account_window.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
 
-        account_window.title("Coffee Management System")
+        account_window.title("Food and Drink Shop System")
 
         # window Icon
-        icon = PhotoImage(file='images\\CoffeeShop-brand-logo.png')
+        icon = PhotoImage(file='images\\replace_this.png')
         account_window.iconphoto(True, icon)
 
         account_window.config(background='#f6f6f9')
 
         # ====== MENU BAR ==========
-        logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
+        logoIcon = Image.open('images\\replace_this.png')
         photo = ImageTk.PhotoImage(logoIcon)
         logo = Label(account_window, image=photo, bg='#f6f6f9')
         logo.image = photo
@@ -120,7 +120,7 @@ class InventoryPage:
 
         def bill():
             win = Toplevel()
-            Inventory.InventoryPage(win)
+            Bill.InventoryPage(win)
             account_window.withdraw()
             win.deiconify()
 

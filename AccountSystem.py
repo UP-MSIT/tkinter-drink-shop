@@ -24,10 +24,10 @@ class AccountPage:
         AccountSystem_window.resizable(0, 0)
 
         # window Icon
-        icon = PhotoImage(file='images\\CoffeeShop-brand-logo.png')
+        icon = PhotoImage(file='images\\replace_this.png')
         AccountSystem_window.iconphoto(True, icon)
 
-        AccountSystem_window.title('CHILL DRINK SHOP')
+        AccountSystem_window.title('Login')
 
         # Navigating through windows
         sign_up = Frame(AccountSystem_window)
@@ -42,41 +42,9 @@ class AccountPage:
 
         show_frame(sign_in)
 
-        # ======================================================================================
-        # =================== LANDING PAGE ========================================================
-        # ======================================================================================
+
         landing_page.config(background='#ffffff')
 
-        # ====== LOGO ==========
-        # logoIcon = Image.open('images\\CoffeeShop-brand-logo.png')
-        # photo = ImageTk.PhotoImage(logoIcon)
-        # logo = Label(landing_page, image=photo, bg='#ffffff')
-        # logo.image = photo
-        # logo.place(x=20, y=45)
-
-        # brand_name = Label(landing_page, text='CHILL DRINK SHOP', bg='#ffffff', fg='#ff6c38', font=("yu gothic ui", 15, "bold"))
-        # brand_name.place(x=83, y=53)
-
-        # text = Label(landing_page, text="FDA APPROVED", bg='#ffffff', font=("", 12, "bold"))
-        # text.place(x=20, y=140)
-        # txt = "• We produce hygienic and healthy coffee \nby all standards\t\t\t \n\n• Very Affordable and best Coffee in " \
-        #       "town \nfor the past two and half years\t"
-        # text2 = Label(landing_page, text=txt,
-        #               fg="#6b6a69", bg='#ffffff', font=("", 11, "bold"))
-        # text2.place(x=15, y=180)
-
-        # ====== LOGO ==========
-        # coffeeImage = Image.open('images\\coffee3.gif')
-        # photo = ImageTk.PhotoImage(coffeeImage)
-        # coffee_image = Label(landing_page, image=photo, bg='#ffffff')
-        # coffee_image.image = photo
-        # coffee_image.place(x=30, y=370)
-
-
-        # pageDivide_line = Canvas(landing_page, width=1.5, height=900, bg="#e6e6e6", highlightthickness=0)
-        # pageDivide_line.place(x=350, y=0)
-
-        # ========= RIGHT SIDE ===============
         # Label
         heading_label = Label(landing_page, text="To Continue,\n Please Login or Create New Account", font=("", 13, "bold"),
                               bg='#ffffff')
@@ -147,7 +115,7 @@ class AccountPage:
         # pageDivide_line = Canvas(sign_in, width=1.5, height=900, bg="#e6e6e6", highlightthickness=0)
         # pageDivide_line.place(x=350, y=0)
 
-        heading = Label(sign_in, text="Sign In", font=("", 16, "bold"), bg='#ffffff')
+        heading = Label(sign_in, text="Login", font=("", 16, "bold"), bg='#ffffff')
         heading.place(x=600/2, y=100)
 
         Username = StringVar()
@@ -155,42 +123,19 @@ class AccountPage:
 
         def login_all():
             # Admin
-            conn1 = sqlite3.connect("./Database/CoffeeShop.db")
-            cursor1 = conn1.cursor()
+            conn = sqlite3.connect("./Database/CoffeeShop.db")
+            cursor = conn.cursor()
             find_user1 = 'SELECT * FROM Admin_Account WHERE admin_username = ? and admin_password = ?'
-            cursor1.execute(find_user1, [(username_entry.get()), (password_entry.get())])
+            cursor.execute(find_user1, [(username_entry.get()), (password_entry.get())])
 
-            # Guest
-            conn2 = sqlite3.connect("./Database/CoffeeShop.db")
-            cursor2 = conn2.cursor()
-            find_user2 = 'SELECT * FROM Guest_Account WHERE guest_username = ? and guest_password = ?'
-            cursor2.execute(find_user2, [(username_entry.get()), (password_entry.get())])
+            result = cursor.fetchall()
 
-            # Employee
-            conn3 = sqlite3.connect("./Database/CoffeeShop.db")
-            cursor3 = conn3.cursor()
-            find_user3 = 'SELECT * FROM Employee_Account WHERE employee_username = ? and employee_password = ?'
-            cursor3.execute(find_user3, [(username_entry.get()), (password_entry.get())])
-
-            result3 = cursor3.fetchall()
-            result2 = cursor2.fetchall()
-            result1 = cursor1.fetchall()
-
-            if result2:
-                messagebox.showinfo("Success", 'Logged in Successfully,\n\nClick "OK" to continue.')
-                open_guest()
-            elif result1:
+            if result:
                 messagebox.showinfo("Success", 'Logged in Successfully,\n\nClick "OK" to continue.')
                 open_admin()
-            elif result3:
-                messagebox.showinfo("Success", 'Logged in Successfully,\n\nClick "OK" to continue.')
-                open_employee()
             else:
                 messagebox.showerror("Failed", "Wrong Login details, please try again.")
 
-        # ========================================================================
-        # ============================Username====================================
-        # ========================================================================
         username_label = Label(sign_in, text='Username', fg="#27221c", bg='#ffffff', font=("", 12, "bold"))
         username_label.place(x=380/2, y=150)
         username_entry = Entry(sign_in, highlightthickness=2, relief=FLAT, bg="#fafafa", fg="#6b6a69",
@@ -198,9 +143,6 @@ class AccountPage:
         username_entry.place(x=380/2, y=182, width=290, height=34)
         username_entry.config(highlightbackground="#6b6a69", highlightcolor="black")
 
-        # ========================================================================
-        # ============================Password====================================
-        # ========================================================================
         password_label = Label(sign_in, text='Password', fg="#27221c", bg='#ffffff', font=("", 12, "bold"))
         password_label.place(x=380/2, y=250)
         password_entry = Entry(sign_in, highlightthickness=2, relief=FLAT, bg="#fafafa", fg="#6b6a69", font=("", 12), show="•",
@@ -212,14 +154,14 @@ class AccountPage:
                              cursor='hand2', activebackground='#036553', command=login_all)
         loginButton.place(x=380/2, y=370, width=290, height=40)
 
-        line = Canvas(sign_in, width=286, height=1.5, bg="#e6e6e6", highlightthickness=0)
-        line.place(x=380/2, y=440)
-        label = Label(sign_in, text='No Account Yet', bg='#ffffff')
-        label.place(x=580/2, y=430)
+        # line = Canvas(sign_in, width=286, height=1.5, bg="#e6e6e6", highlightthickness=0)
+        # line.place(x=380/2, y=440)
+        # label = Label(sign_in, text='No Account Yet', bg='#ffffff')
+        # label.place(x=580/2, y=430)
 
-        createButton = Button(sign_in, fg='#f8f8f8', text='Create New Account', bg='#4286f5', font=("", 12, "bold"),
-                              cursor='hand2', activebackground='#4286f5', command=lambda: show_frame(sign_up))
-        createButton.place(x=380/2, y=470, width=290, height=40)
+        # createButton = Button(sign_in, fg='#f8f8f8', text='Create New Account', bg='#4286f5', font=("", 12, "bold"),
+        #                       cursor='hand2', activebackground='#4286f5', command=lambda: show_frame(sign_up))
+        # createButton.place(x=380/2, y=470, width=290, height=40)
 
         # function for show and hide password
         def password_command():
@@ -297,9 +239,9 @@ class AccountPage:
                 #db.close()
                 #messagebox.showinfo('Congrats', 'Password changed successfully')
 
-        forgotPassword = Button(sign_in, text='Forgot password', font=("", 10, "bold"), bg='#ffffff', fg='#4286f5',
-                                borderwidth=0, activebackground='#f8f8f8', command=lambda: forgot_password(), cursor="hand2")
-        forgotPassword.place(x=600/2, y=332)
+        # forgotPassword = Button(sign_in, text='Forgot password', font=("", 10, "bold"), bg='#ffffff', fg='#4286f5',
+        #                         borderwidth=0, activebackground='#f8f8f8', command=lambda: forgot_password(), cursor="hand2")
+        # forgotPassword.place(x=600/2, y=332)
 
         # =============================================================================================================
         # ================================ SIGN UP PAGE ===============================================================
